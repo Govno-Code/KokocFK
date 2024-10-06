@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+    <h1>Добро пожаловать на сайт Kokos Group!</h1>
+    <p>Футбольный клуб и его фанаты — всегда вместе!</p>
+    <a href="{{ url_for('register') }}">Присоединяйтесь!</a>
+{% endblock %}
