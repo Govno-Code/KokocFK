@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Кокос Групп{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Главная</a></li>
+                <li><a href="{{ url_for('news') }}">Новости</a></li>
+                <li><a href="{{ url_for('products') }}">Магазин</a></li>
+                <li><a href="{{ url_for('login') }}">Вход</a></li>
+                <li><a href="{{ url_for('register') }}">Регистрация</a></li>
+                <li><a href="{{ url_for('profile') }}">Профиль</a></li>
+                {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('admin') }}">Админ-панель</a></li>
+                {% endif %}
+                {% if current_user.is_authenticated %}
+                    <li><a href="{{ url_for('logout') }}">Выход</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Основной контент страницы -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Kokos Group</p>
+    </footer>
+</body>
+</html>

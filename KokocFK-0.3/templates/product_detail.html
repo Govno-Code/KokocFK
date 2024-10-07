@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Новость - {{ product.title }}{% endblock %}
+
+{% block content %}
+<div class="product-detail">
+    <div class="container">
+        <div class="product-header">
+            <h1>{{ product.title }}</h1>
+            <div class="product-meta">
+                <span class="product-category">{{ product.category }}</span>
+                <span class="product-date">{{ product.date }}</span>
+            </div>
+        </div>
+
+        <div class="product-image">
+            <img src="{{ product.image_url }}" alt="{{ product.title }}">
+        </div>
+
+        <div class="product-content">
+            <p>{{ product.full_text }}</p>
+        </div>
+
+        <a href="{{ url_for('products') }}" class="btn btn-back">Вернуться ко всем новостям</a>
+    </div>
+</div>
+{% endblock %}

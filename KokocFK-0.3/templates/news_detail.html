@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Новость - {{ news.title }}{% endblock %}
+
+{% block content %}
+<div class="news-detail">
+    <div class="container">
+        <div class="news-header">
+            <h1>{{ news.title }}</h1>
+            <div class="news-meta">
+                <span class="news-category">{{ news.category }}</span>
+                <span class="news-date">{{ news.date }}</span>
+            </div>
+        </div>
+
+        <div class="news-image">
+            <img src="{{ news.image_url }}" alt="{{ news.title }}">
+        </div>
+
+        <div class="news-content">
+            <p>{{ news.full_text }}</p>
+        </div>
+
+        <a href="{{ url_for('news') }}" class="btn btn-back">Вернуться ко всем новостям</a>
+    </div>
+</div>
+{% endblock %}
