@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+    <title>{% block title %}Кокос Групп{% endblock %}</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</head>
+
+
+<body>
+    <header>
+        <div class="spacer"></div>
+        <nav class="attached">
+            <div class="logo-wrapper">
+                <img src="" alt="" class="logo">
+                <h2>Kokos Group</h2>
+            </div>
+            <div class="links-wrapper middle">
+                <a href="{{ url_for('index') }}">Главная</a>
+                <a href="{{ url_for('news') }}">Новости</a>
+                <a href="{{ url_for('products') }}">Магазин</a>
+
+                <!-- {% if current_user.is_authenticated %}
+                <a href="{{ url_for('admin') }}">Админ-панель</a>
+                {% endif %}
+                {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('logout') }}">Выход</a>
+                {% endif %}
+                
+                в профиль
+                -->
+            </div>
+            
+            <div class="links-wrapper last">
+                <a href="{{ url_for('profile') }}"><box-icon name='user-account' type='solid' color='#ffffff' ></box-icon></a>
+                <a href="{{ url_for('profile') }}"><box-icon name='cart' color='#ffffff' ></box-icon></a>
+                <a class="menu"><box-icon name='menu' color='#ffffff' >
+                    <!-- <a href="{{ url_for('index') }}">Главная</a>
+                <a href="{{ url_for('news') }}">Новости</a>
+                <a href="{{ url_for('products') }}">Магазин</a> -->
+                </box-icon></a>
+                
+            </div>
+
+            
+            
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Основной контент страницы -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <div class="footer-el">
+            
+            <h3>О клубе</h3>
+            <p>ФК "Кокос групп" - профессиональный футбольный клуб, основанный в 2024 году.</p>
+        </div>
+        <div class="footer-el">
+            <h3>Контакты    </h3>
+            <p>Телефон: +7 (123) 456-7890</p>
+            <p>Email: info@kokosgroup.ru</p>
+        </div>
+        <div class="footer-el">
+            <h3>Социальные сети</h3>
+            <a href="https://yandex.ru">Rutube</a>
+            <a href="https://yandex.ru">Telegram</a>
+            <a href="https://yandex.ru">VK</a>
+        </div>
+        
+    </footer>
+</body>
+<script>
+    if (window.scrollY == 0) {
+    document.querySelector("nav").classList.add("attached")
+    
+} else {
+    document.querySelector("nav").classList.remove("attached")
+}
+
+
+addEventListener("scroll", (event) => {
+if (window.scrollY == 0) {
+    document.querySelector("nav").classList.add("attached")
+    
+} else {
+    document.querySelector("nav").classList.remove("attached")
+}
+
+});
+</script>
+</html>

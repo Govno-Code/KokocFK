@@ -1,0 +1,208 @@
+{% extends 'base.html' %} {% block title %}Главная{% endblock %} {% block
+content %}
+
+<div class="main-wrapper">
+  <div class="main-block staggerElements">
+    <div class="caro"></div>
+    <h1 class="main-text">Добро пожаловать на сайт Kokos Group!</h1>
+    <p class="main-subtext">Футбольный клуб и его фанаты — всегда вместе!</p>
+    <div class="flex-wrapper-row">
+      <button class="cta-button"><a>Кнопка!</a></button>
+      <button class="cta-button"><a>Еще одна кнопка!</a></button>
+    </div>
+  </div>
+</div>
+
+  <h1 class="fromRight title-alt">Новости</h1>
+  <div class="news-wrapper staggerElements">
+    <div class="card">
+      <img src="../static/images/messi.jpg" alt="" srcset="" />
+      <h3>Тут будут Новости насчет клуба и типо того</h3>
+      <div class="date">10.07.2024</div>
+      <p>
+        Mauris at mi tellus. Cras et placerat sapien. Orci varius natoque
+        penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        Aenean at urna sed massa mollis gravida. Suspendisse feugiat nibh at
+        ipsum elementum sollicitudin. Nam et lorem quis risus rhoncus dapibus
+        non in leo. Praesent vitae facilisis justo. Curabitur venenatis.
+      </p>
+    </div>
+    <div class="card">
+      <img src="../static/images/messi.jpg" alt="" srcset="" />
+      <h3>Тут будут Новости насчет клуба и типо того</h3>
+      <div class="date">10.07.2024</div>
+      <p>
+        Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut augue
+        diam, porttitor eu ornare vitae, lobortis vitae tortor. Ut porta
+        dignissim risus, non tincidunt tellus iaculis eget. Praesent id arcu
+        odio. Morbi ut semper nunc. Nam quis placerat tellus. Pellentesque
+        elementum nisl vel placerat bibendum. Phasellus nec augue.
+      </p>
+    </div>
+    <div class="card">
+      <img src="../static/images/messi.jpg" alt="" srcset="" />
+      <h3>Тут будут Новости насчет клуба и типо того</h3>
+      <div class="date">10.07.2024</div>
+      <p>
+        Cras tempus justo non dapibus viverra. Nunc fermentum justo et mi
+        molestie, eget venenatis ante tempor. Nullam non odio nec purus laoreet
+        ultrices in eu dui. Pellentesque congue felis sagittis mattis vulputate.
+        Quisque a purus eu quam gravida egestas. Mauris vestibulum vestibulum
+        eros, non iaculis nisl maximus eu. Nulla ornare.
+      </p>
+    </div>
+  </div>
+
+  <h1 class="fromLeft title">Ближайшие матчи</h1>
+
+  <div class="news-wrapper staggerElements">
+
+    <div class="card match">
+      <div class="match-title">
+        <div>КОС</div>
+        <h2>VS</h2>
+        <div>ЗЕН</div>
+      </div>
+      <div class="match-info">
+        <div class="stadium-name">ВТБ Арена</div>
+        <div class="date">18.10.2024</div>
+        <div class="status determining"> ОПРЕДЕЛЯЕТСЯ </div>
+        </div>
+    </div>
+    
+    <div class="card match">
+        <div class="match-title">
+          <div>КОС</div>
+          <h2>VS</h2>
+          <div>ЗЕН</div>
+        </div>
+        <div class="match-info">
+            <div class="stadium-name">ВТБ Арена</div>
+            <div class="date">18.10.2024</div>
+            <div class="status loss"> ПОРАЖЕНИЕ </div>
+            </div>
+      </div>
+
+      
+    <div class="card match">
+        <div class="match-title">
+          <div>КОС</div>
+          <h2>VS</h2>
+          <div>ЗЕН</div>
+        </div>
+        <div class="match-info">
+            <div class="stadium-name">ВТБ Арена</div>
+            <div class="date">18.10.2024</div>
+            <div class="status win"> ПОБЕДА</div>
+            </div>
+      </div>
+
+
+      
+
+
+
+  </div>
+
+
+  <div class="advert fromRight">
+    <div class="advert-text">
+        <h2>Ваша реклама может быть тут!</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae, nam maxime reprehenderit earum, quidem consequuntur debitis </p>
+    </div>
+
+    <button class="cta-button"><a>Тык!</a></button>
+  </div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const animateFromBottom = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                anime({
+                    targets: entry.target,
+                    translateY: [100, 0],
+                    opacity: [0, 1],
+                    easing: 'easeOutExpo',
+                    duration: 1000,
+                    delay: 800,
+                    complete: () => observer.unobserve(entry.target)
+                });
+            }
+        });
+    };
+
+    const animateFromLeft = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                anime({
+                    targets: entry.target,
+                    translateX: [-100, 0],
+                    opacity: [0, 1],
+                    easing: 'easeOutExpo',
+                    duration: 1000,
+                    delay: 800,
+                    complete: () => observer.unobserve(entry.target)
+                });
+            }
+        });
+    };
+    const animateFromRight = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                anime({
+                    targets: entry.target,
+                    translateX: [100, 0],
+                    opacity: [0, 1],
+                    easing: 'easeOutExpo',
+                    duration: 1000,
+                    delay: 800,
+                    complete: () => observer.unobserve(entry.target)
+                });
+            }
+        });
+    };
+
+    const staggerElements = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                anime({
+                    targets: entry.target.children,
+                    translateY: [100, 0],
+                    opacity: [0, 1],
+                    easing: 'easeOutExpo',
+                    duration: 1000,
+                    
+                    delay: anime.stagger(200, { start: 600 }),
+                    complete: () => observer.unobserve(entry.target)
+                });
+            }
+        });
+    };
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+    const fromRightObserver = new IntersectionObserver(animateFromRight, observerOptions)
+    const fromBottomObserver = new IntersectionObserver(animateFromBottom, observerOptions);
+    const fromLeftObserver = new IntersectionObserver(animateFromLeft, observerOptions);
+    const staggerObserver = new IntersectionObserver(staggerElements, observerOptions);
+
+    document.querySelectorAll('.fromRight').forEach(el => fromRightObserver.observe(el));
+    document.querySelectorAll('.fromBottom').forEach(el => fromBottomObserver.observe(el));
+    document.querySelectorAll('.fromLeft').forEach(el => fromLeftObserver.observe(el));
+    document.querySelectorAll('.staggerElements').forEach(el => staggerObserver.observe(el));
+});
+</script>
+
+
+
+
+
+
+
+
+{% endblock %}
