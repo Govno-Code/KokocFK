@@ -17,12 +17,14 @@
 
     <div class="news-list">
         {% for news in news_list %}
-        <div class="news-card">
+        <div class="news-card card">
             <img src="{{ news.image_url }}" alt="{{ news.title }}">
             <div class="news-content">
-                <h2><a href="{{ url_for('news_detail', news_id=news.id) }}">{{ news.title }}</a></h2>
-                <p class="news-category">{{ news.category }}</p>
-                <p class="news-date">{{ news.date }}</p>
+                <h3><a href="{{ url_for('news_detail', news_id=news.id) }}">{{ news.title }}</a> </h3>
+                <div class="date">{{ news.date }}</div>
+                
+                
+                <div class="categories"><div class="category">{{ news.category }}</div></div>
                 <p class="news-description">{{ news.short_description }}</p>
             </div>
         </div>

@@ -1,7 +1,8 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block title %}Магазин{% endblock %} {% block
+    content %}
 
-{% block content %}
-    <div class="product-filter">
+
+    <div class="product-filter news-filter">
         <form method="GET">
             <label for="category">Filter by category:</label>
             <select name="category" id="category">
@@ -14,16 +15,21 @@
         </form>
     </div>
 
-    <div class="product-list">
+    <div class="product-list news-list">
         {% for product in product_list %}
-        <div class="product-card">
+        <div class="product-card card news-card">
             <img src="{{ product.image_url }}" alt="{{ product.title }}">
-            <div class="product-content">
-                <h2><a href="{{ url_for('product_detail', product_id=product.id) }}">{{ product.title }}</a></h2>
-                <p class="product-category">{{ product.category }}</p>
-                <p class="product-date">{{ product.date }}</p>
-                <p class="product-description">{{ product.short_description }}</p>
+            <div class="product-content news-content">
+                <h3><a href="{{ url_for('product_detail', product_id=product.id) }}">{{ product.title }}</a> </h3>
+                <div class="date">{{ product.date }}</div>
+                
+                
+                <div class="categories"><div class="category">{{ product.category }}</div></div>
+                <p class="product-description news-description">{{ product.short_description }}</p>
+                
             </div>
+            <button class="red full">3000 ₽</button>
+            
         </div>
         {% endfor %}
     </div>
