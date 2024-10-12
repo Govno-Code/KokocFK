@@ -17,10 +17,10 @@
 
     <div class="news-list">
         {% for news in news_list %}
-        <div class="news-card card">
+        <div class="news-card card" onclick="redirect(`{{ url_for('news_detail', news_id=news.id) }}`)">
             <img src="{{ news.image_url }}" alt="{{ news.title }}">
             <div class="news-content">
-                <h3><a href="{{ url_for('news_detail', news_id=news.id) }}">{{ news.title }}</a> </h3>
+                <h3>{{ news.title }}</h3>
                 <div class="date">{{ news.date }}</div>
                 
                 

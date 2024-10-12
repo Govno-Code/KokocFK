@@ -17,10 +17,12 @@
 
     <div class="product-list news-list">
         {% for product in product_list %}
-        <div class="product-card card news-card">
+        
+        <div class="product-card card news-card" onclick="redirect(`{{ url_for('product_detail', product_id=product.id) }}`)">
+            
             <img src="{{ product.image_url }}" alt="{{ product.title }}">
             <div class="product-content news-content">
-                <h3><a href="{{ url_for('product_detail', product_id=product.id) }}">{{ product.title }}</a> </h3>
+                <h3>{{ product.title }}</h3>
                 <div class="date">{{ product.date }}</div>
                 
                 
@@ -28,7 +30,8 @@
                 <p class="product-description news-description">{{ product.short_description }}</p>
                 
             </div>
-            <button class="red full">3000 ₽</button>
+        
+            <button class="red fullnt margin-16">3000 ₽</button>
             
         </div>
         {% endfor %}

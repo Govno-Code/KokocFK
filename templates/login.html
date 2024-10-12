@@ -2,8 +2,9 @@
 
 {% block content %}
 <div class="login-wrap">
-    <h2>Авторизация</h2>
+    
     <form method="POST" class="login-menu">
+        <h2>Авторизация</h2>
         {{ form.hidden_tag() }}
         <div class="login-div">
             {{ form.email.label }}
@@ -20,12 +21,12 @@
             {{ form.submit(class="red full nomargin") }}
         </div>
 
-        <p  style="margin-top: 30px;">
+        <div  style="margin-top: 30px;display: flex;
+        align-items: center;justify-content: space-between;">
             <a href="{{ url_for('forgot_password') }}">Забыли пароль?</a>
-        </p>
+            <a href="{{ url_for('register') }}">Регистрация</a>
+        </div>
     </form>
-
-   
     
 </div>
 {% endblock %}

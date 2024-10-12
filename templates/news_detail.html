@@ -3,12 +3,14 @@
 {% block title %}Новость - {{ news.title }}{% endblock %}
 
 {% block content %}
+<a href="{{ url_for('news') }}" class="cta-button button-padding margin-16">Вернуться ко всем новостям</a>
+
 <div class="news-detail">
-    <div class="container">
+    <div class="news-container">
         <div class="news-header">
             <h1>{{ news.title }}</h1>
             <div class="news-meta">
-                <span class="news-category">{{ news.category }}</span>
+                <!-- <span class="news-category">{{ news.category }}</span> -->
                 <span class="news-date">{{ news.date }}</span>
             </div>
         </div>
@@ -21,7 +23,7 @@
             <p>{{ news.full_text }}</p>
         </div>
 
-        <a href="{{ url_for('news') }}" class="btn btn-back">Вернуться ко всем новостям</a>
+        
     </div>
 </div>
 {% endblock %}

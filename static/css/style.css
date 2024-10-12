@@ -437,6 +437,7 @@ main {
   min-height: calc(100dvh - 123px);
 }
 footer {
+  margin-top: 60px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: start;
@@ -641,6 +642,9 @@ input[type="checkbox"] {
   background-color: rgba(228, 12, 12, 0.5);
 
 }
+.margin-16 {
+  margin: 16px;
+}
 .full{
   width: 100%;
 }
@@ -653,14 +657,31 @@ input[type="checkbox"] {
   
   width: 100%;
   padding: 32px;
-
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   align-items: flex-start;
   gap: 16px;
 
   
 
+}
+.button-padding {
+  padding: 12px 24px;
+}
+.news-image {
+  margin-top: 32px;
+  margin-bottom: 32px;
+  width: 100%;
+
+}
+.news-image img {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+.news-container {
+  padding-top: 0px;
+  padding: 32px;
 }
 
 
