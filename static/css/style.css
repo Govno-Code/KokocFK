@@ -518,6 +518,12 @@ nav {
   animation-iteration-count: infinite;
 }
 
+
+.alt-caro {
+  background-image: url("../images/kokos-1.jpg");
+  animation-name: animate-alt;
+
+}
 .news-filter {
 
   border: none;
@@ -690,7 +696,20 @@ input[type="checkbox"] {
 }
 
 
+@media screen and (max-width: 480px) {
+  .main-text {
+    font-size: 36px;
+  }
+  .main-subtext {
+    font-size: 24px;
+  }
+}
+
+
 @media screen and (max-width: 860px) {
+
+
+
 
 
     
@@ -746,6 +765,22 @@ input[type="checkbox"] {
   }
   100% {
     background-image: url("../images/ronaldo.jpg");
+  }
+}
+
+
+@keyframes animate-alt {
+  0% {
+    background-image: url("../images/kokos-1.jpg");
+  }
+  50% {
+    background-image: url("../images/kokos-1.jpg");
+  }
+  51% {
+    background-image: url("../images/kokos-2.jpg");
+  }
+  100% {
+    background-image: url("../images/kokos-2.jpg");
   }
 }
 

@@ -1,0 +1,60 @@
+{% extends 'base.html' %} {% block title %}О клубе{% endblock %} {% block
+    content %}
+    
+    
+    <div class="main-wrapper">
+        <div class="main-block staggerElements">
+          <div class="caro alt-caro"></div>
+          <h1 class="main-text">О футбольном клубе Кокос Групп</h1>
+          <p class="main-subtext">Здесь будет информация о клубе</p>
+          <div class="flex-wrapper-row">
+            <button class="cta-button"><a href="{{ url_for('register') }}">Rutube</a></button>
+            <button class="cta-button"><a href="{{ url_for('login') }}">Telegram</a></button>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    <h1 class="title fromLeft">Контакты</h1>
+    <div class="news-wrapper staggerElements">
+        <div class="card">
+            <img src="../static/images/person.png">
+            <h3>Васильев Вася Васильевич</h3>
+            <p> Mauris at mi tellus. Cras et placerat sapien. Orci varius natoque
+                penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                Aenean at urna sed massa mollis gravida. Suspendisse feugiat nibh at
+                ipsum elementum sollicitudin. Nam et lorem quis risus rhoncus dapibus
+                non in leo. Praesent vitae facilisis justo. Curabitur venenatis.</p>
+        </div>
+        <div class="card">
+            <img src="../static/images/person.png">
+            <h3>Николаев Николай Николаевич</h3>
+            <p> Mauris at mi tellus. Cras et placerat sapien. Orci varius natoque
+                penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                Aenean at urna sed massa mollis gravida. Suыspendisse feugiat nibh at
+                ipsum elementum sollicitudin. Nam et lorem quis risus rhoncus dapibus
+                non in leo. Praesent vitae facilisis justo. Curabitur venenatis.</p>
+        </div>
+        <div class="card">
+            <img src="../static/images/person.png">
+            <h3>Артемов Артем Артемевич</h3>
+            <p> Mauris at mi tellus. Cras et placerat sapien. Orci varius natoque
+                penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                Aenean at urna sed massa mollis gravida. Suspendisse feugiat nibh at
+                ipsum elementum sollicitudin. Nam et lorem quis risus rhoncus dapibus
+                non in leo. Praesent vitae facilisis justo. Curabitur venenatis.</p>
+        </div>
+
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    {% endblock %}
+    

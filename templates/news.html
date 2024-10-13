@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="news-filter">
+    <div class="news-filter fromLeft">
         <form method="GET">
-            <label for="category">Filter by category:</label>
+            <label for="category">Фильтр по категориям:</label>
             <select name="category" id="category">
-                <option value="all">All</option>
-                <option value="team">Team</option>
-                <option value="matches">Matches</option>
-                <option value="store">Store</option>
-                <option value="events">Events</option>
+                <option value="all">Все</option>
+                <option value="team">Команда</option>
+                <option value="matches">Матчи</option>
+                <option value="store">Магазин</option>
+                <option value="events">События</option>
             </select>
-            <button type="submit">Filter</button>
+            <button type="submit">Фильтр</button>
         </form>
     </div>
 
-    <div class="news-list">
+    <div class="news-list staggerElements">
         {% for news in news_list %}
         <div class="news-card card" onclick="redirect(`{{ url_for('news_detail', news_id=news.id) }}`)">
             <img src="{{ news.image_url }}" alt="{{ news.title }}">

@@ -94,7 +94,7 @@ class NewsForm(FlaskForm):
     title = StringField('Заголовок', validators=[validators.DataRequired(), validators.Length(min=5, max=100)])
     image_url = StringField('Ссылка на изображение', validators=[validators.DataRequired(), validators.Length(min=5, max=255)])
     short_description = TextAreaField('Краткое описание', validators=[validators.DataRequired(), validators.Length(min=10, max=255)])
-    category = SelectField('Category', choices=[('team', 'Team'),('matches', 'Matches'),('store', 'Store'),('events', 'Events')
+    category = SelectField('Category', choices=[('team', 'Команда'),('matches', 'Матчи'),('store', 'Магазин'),('events', 'События')
     ], validators=[DataRequired()])
     full_text = TextAreaField('Полный текст', validators=[validators.DataRequired()])
     submit = SubmitField('Добавить новость')
@@ -104,14 +104,23 @@ class ProductForm(FlaskForm):
     title = StringField('Наименование', validators=[validators.DataRequired(), validators.Length(min=5, max=100)])
     image_url = StringField('Ссылка на изображение', validators=[validators.DataRequired(), validators.Length(min=5, max=255)])
     info = TextAreaField('Краткое описание', validators=[validators.DataRequired(), validators.Length(min=10, max=255)])
-    category = SelectField('Category', choices=[('clothes', 'Clothes'),('accessories', 'Accessories'),('other', 'Other')], validators=[DataRequired()])
+    category = SelectField('Category', choices=[('clothes', 'Одежда'),('accessories', 'Аксесуары'),('other', 'Другое')], validators=[DataRequired()])
     submit = SubmitField('Создать товар')
+
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('page404.html', title='Страница не найдена')
 
 
 @app.route('/')
 def index():
     return render_template('index.html', title='Главная')
 
+@app.route('/about', methods=['GET', 'POST'])
+def about():
+    return render_template('about.html', title='О клубе')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -267,4 +276,11 @@ def admin():
 
 if __name__ == '__main__':
     create_db() #Временное решение для более быстрой разработки. Далее Создание новых таблиц в БД будет осуществлятся либо в терминале, либо в отдельном файле
+    '''
+    Что бы создавать новые таблицы через терминал - просто импортируйте функцию create_db из app, а затем вызовите функцию
+    from app import create_db
+    create_db()
+    
+    Далее выполнится код из файла sq_db.sql
+    '''
     app.run(debug=True)
